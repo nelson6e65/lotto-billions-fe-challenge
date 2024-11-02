@@ -1,0 +1,36 @@
+{
+  "name": "lotto-billions-fe-challenge",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev --turbopack",
+    "fix:code": "next lint --fix",
+    "fix:format": "prettier --write .",
+    "lint": "npm run lint:code && npm run lint:format",
+    "lint:code": "next lint",
+    "lint:format": "prettier --check .",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^15.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.5",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "eslint": "^9.14.0",
+    "eslint-config-next": "15.0.2",
+    "eslint-config-prettier": "^9.1.0",
+    "postcss": "^8.4.47",
+    "prettier": "^3.3.3",
+    "prettier-plugin-multiline-arrays": "^3.0.6",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "prettier-plugin-pkg": "^0.18.1",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.6.3"
+  }
+}
