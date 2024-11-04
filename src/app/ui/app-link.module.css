@@ -1,0 +1,9 @@
+.defaults {
+  @apply inline-block underline underline-offset-2 outline-dotted outline-0 transition-colors focus:outline-1 focus-visible:outline-1 disabled:cursor-not-allowed disabled:opacity-60 aria-disabled:cursor-not-allowed aria-disabled:opacity-60;
+}
+
+.color-variant-primary {
+  @apply text-tangaroa-700 outline-tangaroa-900 hover:text-tangaroa-500 active:text-tangaroa-900 disabled:text-tangaroa-400 aria-disabled:text-tangaroa-400;
+}
+
+/* TODO: Add other variants */
