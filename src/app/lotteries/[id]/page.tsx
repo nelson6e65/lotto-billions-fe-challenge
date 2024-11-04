@@ -1,4 +1,4 @@
-import AppLink from '@/app/ui/app-link';
+import AppLink from '@/components/core/app-link';
 
 export default async function LotteriesShowPage({ params }: { params: Promise<{ id: string }> }) {
   const id = (await params).id;

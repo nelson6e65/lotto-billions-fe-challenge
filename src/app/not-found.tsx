@@ -1,4 +1,4 @@
-import AppLink from '@/app/ui/app-link';
+import AppLink from '@/components/core/app-link';
 
 export default function () {
   return (

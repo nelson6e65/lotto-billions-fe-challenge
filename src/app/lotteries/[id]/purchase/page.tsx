@@ -1,4 +1,4 @@
-import AppButton from '@/app/ui/app-button';
+import AppButton from '@/components/core/app-button';
 
 export default async function LotteriesPurchasePage({ params }: { params: Promise<{ id: string }> }) {
   const id = (await params).id;
