@@ -1,0 +1,22 @@
+.defaults {
+  @apply px-2 py-1 disabled:cursor-not-allowed disabled:opacity-60;
+}
+
+.color-variant-primary {
+  @apply bg-tangaroa-500 text-tangaroa-50 hover:bg-tangaroa-600 active:bg-tangaroa-700 disabled:bg-tangaroa-100 disabled:text-tangaroa-400;
+
+  /* &.fill-solid {
+  }
+
+  &.fill-outline {
+  }
+
+  &.fill-none {
+  } */
+}
+
+.rounded-size-normal {
+  @apply rounded;
+}
+
+/* TODO: Add other color variants */
