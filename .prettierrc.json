@@ -5,6 +5,8 @@
   "printWidth": 120,
   "useTabs": false,
   "singleQuote": true,
+  "bracketSpacing": true,
+
   "arrowParens": "always",
   "organizeImportsSkipDestructiveCodeActions": true,
   "multilineArraysWrapThreshold": 1,
@@ -27,7 +29,9 @@
       "files": [".tsx"],
       "options": {
         "tailwindAttributes": ["className"],
-        "tailwindFunctions": ["clsx"]
+        "tailwindFunctions": ["clsx"],
+
+        "bracketSameLine": false
       }
     }
   ]
