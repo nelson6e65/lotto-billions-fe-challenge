@@ -17,7 +17,7 @@ export class LotteryDrawsService {
 
   public async getOne(
     id: string,
-  ): Promise<[IErrorResponse<unknown | null>, undefined] | [undefined, ISuccessResponse<ILotteryDrawWithDetails[]>]> {
-    return await tryRequest<ILotteryDrawWithDetails[]>(this.api.get(`/draws/${id}`));
+  ): Promise<[IErrorResponse<unknown | null>, undefined] | [undefined, ISuccessResponse<ILotteryDrawWithDetails>]> {
+    return await tryRequest<ILotteryDrawWithDetails>(this.api.get(`/draws/${id}`));
   }
 }
