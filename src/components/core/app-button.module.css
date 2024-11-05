@@ -14,9 +14,9 @@
   &.fill-none {
   } */
 }
+/* TODO: Add other color variants */
 
+/* TODO: Add other round sizes    */
 .rounded-size-normal {
   @apply rounded;
 }
-
-/* TODO: Add other color variants */

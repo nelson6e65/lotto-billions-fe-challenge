@@ -1,23 +1,10 @@
-import { ColorName, DEFAULT_COLOR, IColorMap } from '@/definitions/colors';
-import { DEFAULT_SIZE, ISizeMap, SizeName } from '@/definitions/sizes';
+import { ColorName } from '@/definitions/colors';
+import { SizeName } from '@/definitions/sizes';
 import clsx, { ClassValue } from 'clsx';
+import { ButtonHTMLAttributes } from 'react';
 import style from './app-button.module.css';
 
-const roundedSizeCssClassMap: ISizeMap<string | string[]> = {
-  zero: 'rounded-none',
-  sm: 'rounded-sm',
-  normal: 'rounded',
-  md: 'rounded-md',
-  lg: 'rounded-lg',
-  xl: 'rounded-xl',
-  '2xl': 'rounded-2xl',
-  '3xl': 'rounded-3xl',
-  full: 'rounded-full',
-
-  [DEFAULT_SIZE]: '',
-};
-
-export interface IAppButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
+export interface IAppButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'className'> {
   /**
    * Color variant of the button.
    */
