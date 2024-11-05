@@ -1,6 +1,6 @@
 import AppLink from '@/components/core/app-link';
 
-export default function () {
+export default function RootNotFound() {
   return (
     <div className="flex h-screen flex-col items-center justify-center">
       <h1 className="text-4xl font-bold text-red-500">404</h1>
