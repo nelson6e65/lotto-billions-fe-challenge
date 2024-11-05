@@ -19,7 +19,7 @@ export namespace ILotteryDraw {
       logo: `https://picsum.photos/seed/${id}/256/256`,
       name: 'Probatio ' + faker.lorem.word({ length: { min: 6, max: 8 } }),
       jackpot: {
-        amount: faker.number.int({ min: 1000, max: 999999999 }),
+        amount: faker.number.int({ min: 10000, max: 9999999 }),
         currency: 'PEN',
       },
     };

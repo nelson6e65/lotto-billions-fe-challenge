@@ -62,7 +62,7 @@ export default function AppCard({
       className={clsx(
         '[ app-card ]',
         className,
-        'flex flex-col items-center gap-2 overflow-hidden rounded-lg border border-sunshade-200/30 bg-sunshade-100/30 shadow backdrop-blur-sm backdrop-filter hover:bg-sunshade-200/30 md:flex-row dark:border-gray-700 dark:bg-gray-800/30 dark:hover:bg-gray-700/30',
+        'flex flex-col gap-2 overflow-hidden rounded-lg border border-sunshade-200/30 bg-sunshade-100/30 shadow backdrop-blur-sm backdrop-filter hover:bg-sunshade-200/30 md:flex-row dark:border-gray-700 dark:bg-gray-800/30 dark:hover:bg-gray-700/30',
         { grayscale: skeleton },
       )}
     >
@@ -81,7 +81,7 @@ export default function AppCard({
         </div>
       )}
 
-      <div className="flex flex-col justify-between overflow-hidden p-2 leading-normal text-black dark:text-sunshade-50">
+      <div className="flex grow flex-col justify-between overflow-hidden p-2 leading-normal text-black dark:text-sunshade-50">
         {skeleton && <TextSkeleton />}
         {title && <h5 className="text-2xl font-bold tracking-tight">{title}</h5>}
 
