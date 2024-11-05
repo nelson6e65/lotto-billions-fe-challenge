@@ -1,6 +1,6 @@
 export default function Loading() {
   return (
-    <div className="w-100 flex h-screen animate-pulse items-center justify-center backdrop-blur-sm">
+    <div className="flex h-full animate-pulse items-center justify-center backdrop-blur-sm">
       <div role="status">
         <svg
           aria-hidden="true"

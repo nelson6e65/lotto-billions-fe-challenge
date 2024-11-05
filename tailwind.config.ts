@@ -4,6 +4,7 @@ const config: Config = {
   content: [
     './src/**/*.{ts,tsx}',
   ],
+
   darkMode: [
     'variant',
     [
@@ -13,6 +14,9 @@ const config: Config = {
     ],
   ],
   theme: {
+    container: {
+      center: true,
+    },
     extend: {
       colors: {
         /// Colors steps generated at https://uicolors.app/create
