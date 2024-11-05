@@ -1,4 +1,20 @@
-export default function LotteriesListPage() {
+import { LotteryDrawsService } from '@/services/lottery-draws.service';
+import { notFound } from 'next/navigation';
+
+export default async function LotteriesListPage() {
+  const apiService = new LotteryDrawsService();
+
+  const [
+    error,
+    result,
+  ] = await apiService.getAll();
+
+  if (error) {
+    notFound();
+  }
+
+  console.log(result);
+
   return (
     <div className="p-4">
       <header className="text-center">

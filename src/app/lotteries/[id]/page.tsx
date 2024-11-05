@@ -1,7 +1,22 @@
 import AppLink from '@/components/core/app-link';
+import { LotteryDrawsService } from '@/services/lottery-draws.service';
+import { notFound } from 'next/navigation';
 
 export default async function LotteriesShowPage({ params }: { params: Promise<{ id: string }> }) {
   const id = (await params).id;
+
+  const apiService = new LotteryDrawsService();
+
+  const [
+    error,
+    result,
+  ] = await apiService.getOne(id);
+
+  if (error) {
+    notFound();
+  }
+
+  console.log(result);
 
   return (
     <div className="p-4">
