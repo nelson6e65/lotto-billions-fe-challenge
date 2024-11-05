@@ -16,7 +16,7 @@ export interface IAppCardProps {
   /**
    * Only loads an loading skeleton.
    */
-  loading?: boolean;
+  skeleton?: boolean;
 }
 
 const DynamicRoot = ({
@@ -46,10 +46,10 @@ export default function AppCard({
   subtitle,
   imageUrl,
   imageAlt = 'image',
-  loading,
+  skeleton,
   className,
 }: IAppCardProps) {
-  if (loading) {
+  if (skeleton) {
     imageUrl = '-';
     title = '';
     subtitle = '';
@@ -63,12 +63,12 @@ export default function AppCard({
         '[ app-card ]',
         className,
         'flex flex-col items-center gap-2 overflow-hidden rounded-lg border border-sunshade-200/30 bg-sunshade-100/30 shadow backdrop-blur-sm backdrop-filter hover:bg-sunshade-200/30 md:flex-row dark:border-gray-700 dark:bg-gray-800/30 dark:hover:bg-gray-700/30',
-        { grayscale: loading },
+        { grayscale: skeleton },
       )}
     >
       {imageUrl && (
         <div className="flex aspect-square h-60 w-full min-w-12 max-w-md items-center justify-center overflow-hidden p-2 md:h-full md:w-56">
-          {loading ? (
+          {skeleton ? (
             <ImageSkeleton className="!size-28 rounded-full md:!size-16" />
           ) : (
             // eslint-disable-next-line @next/next/no-img-element
@@ -82,12 +82,12 @@ export default function AppCard({
       )}
 
       <div className="flex flex-col justify-between overflow-hidden p-2 leading-normal text-black dark:text-sunshade-50">
-        {loading && <TextSkeleton />}
+        {skeleton && <TextSkeleton />}
         {title && <h5 className="text-2xl font-bold tracking-tight">{title}</h5>}
 
         {subtitle && <p className="mt-2 flex-grow overflow-auto font-normal">{subtitle}</p>}
 
-        {children && <div className="mt-2 flex-grow overflow-auto">{children}</div>}
+        {children && <div className="mt-2 flex-grow overflow-auto font-normal">{children}</div>}
       </div>
     </DynamicRoot>
   );
