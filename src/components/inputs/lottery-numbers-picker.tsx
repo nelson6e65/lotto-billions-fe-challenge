@@ -1,7 +1,7 @@
 'use client';
 
 import clsx, { ClassValue } from 'clsx';
-import { useEffect, useMemo, useState } from 'react';
+import { useState } from 'react';
 
 export interface IKeyValue {
   key: string;
