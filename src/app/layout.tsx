@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 import { ReactNode } from 'react';
 import './globals.css';
@@ -17,6 +17,11 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: 'LottoBillions',
   description: 'LottoBillions challenge',
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1.0,
 };
 
 export default function RootLayout({
