@@ -1,26 +1,45 @@
-import AppButton from '@/components/core/app-button';
+import PurchaseLotteryForm from '@/components/forms/purchase-lottery-form';
+import { LotteryDrawsService } from '@/services/lottery-draws.service';
+import { notFound } from 'next/navigation';
 
-export default async function LotteriesPurchasePage({ params }: { params: Promise<{ id: string }> }) {
+export default async function LotteriesShowPage({ params }: { params: Promise<{ id: string }> }) {
   const id = (await params).id;
 
+  const apiService = new LotteryDrawsService();
+
+  const [
+    error,
+    result,
+  ] = await apiService.getOne(id);
+
+  if (error) {
+    notFound();
+  }
+
+  const data = result.data;
+
+  // async function purchaseAction(ticketData: { numbers: number[] }) {
+  //   'use server';
+  //
+  //   await apiService.purchaseTicket(data.id, ticketData);
+  //   // Mutate data
+  // }
+
   return (
-    <div className="p-4">
-      <h1 className="font-bold">Purchase lottery</h1>
+    // max-w-screen-md is important for the numbers picker look
+    <div className="[ app-page ] flex h-full max-w-screen-md flex-col gap-4 p-4">
+      <header className="text-center">
+        <h1 className="text-3xl font-bold text-sunshade-700">
+          {/**/}
+          {data.name}
+        </h1>
+      </header>
 
-      <div className="">
-        <div>
-          Lottery id: <span className="font-bold">{id}</span>
-        </div>
+      <PurchaseLotteryForm
+        lotteryData={data}
 
-        <div>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, corrupti rem maxime dicta dolor iste obcaecati
-          facere, natus eum ea voluptates voluptas nulla, tempore molestias at saepe doloribus expedita. Cupiditate.
-        </div>
-
-        <AppButton color="primary" rounded>
-          <span>Purchase</span>
-        </AppButton>
-      </div>
+        // onSubmitAction={purchaseAction}
+      ></PurchaseLotteryForm>
     </div>
   );
 }

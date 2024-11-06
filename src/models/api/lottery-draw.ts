@@ -40,3 +40,9 @@ export interface IPrice {
   amount: number;
   currency: string;
 }
+
+export interface ILotteryTicket {
+  id: string;
+  drawId: string;
+  numbers: number[];
+}
