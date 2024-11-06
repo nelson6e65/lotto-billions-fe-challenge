@@ -20,7 +20,7 @@ export default async function LotteriesShowPage({ params }: { params: Promise<{ 
   const data = result.data;
 
   return (
-    <div className="container min-h-full p-2 md:p-4">
+    <div className="[ app-page ] min-h-full p-2 md:max-w-fit md:p-4">
       <header className="mb-4 text-center">
         <h1 className="text-3xl font-bold text-sunshade-700">
           {/**/}
@@ -33,13 +33,15 @@ export default async function LotteriesShowPage({ params }: { params: Promise<{ 
         <div className="text-center">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            className="inline-block h-56 object-contain drop-shadow sm:h-auto sm:w-full"
+            className="inline-block max-w-56 object-contain drop-shadow sm:h-auto sm:w-full"
             src={data.logo}
             alt={data.name + ' logo'}
           />
         </div>
 
         <div className="flex h-full flex-col gap-4 p-2">
+          <div className="min-h-5 flex-grow"></div>
+
           <DetailSection title="Pricing">
             <span className="font-mono font-semibold">
               {data.pricing.amount.toLocaleString(undefined, {
@@ -65,8 +67,6 @@ export default async function LotteriesShowPage({ params }: { params: Promise<{ 
               })}
             </span>
           </DetailSection>
-
-          <div className="flex-grow"></div>
 
           <div className="p-2 text-right">
             <AppLink color="primary" href={`/lotteries/${id}/purchase`} className="font-bold">

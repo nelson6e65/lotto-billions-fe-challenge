@@ -6,9 +6,14 @@ export default function LotteriesLayout({
   children: ReactNode;
 }>) {
   return (
-    <main className="h-full overflow-auto">
-      {/*  */}
-      {children}
-    </main>
+    <div className="flex h-full flex-col">
+      {/*nav*/}
+      <main className="flex-grow border">
+        {/*  */}
+        {children}
+      </main>
+
+      {/*  Footer */}
+    </div>
   );
 }
